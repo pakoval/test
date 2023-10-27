@@ -1,0 +1,50 @@
+.header {
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 56px;
+  background-color: $white;
+  box-shadow: $header-shadow;
+
+  &__logo {
+    display: inline-block;
+    padding: $padding-sm;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+
+  &__nav {
+    &-list,
+    &-item {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    &-item {
+      gap: 5px;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: $padding-sm;
+      font-size: 16px;
+      text-transform: uppercase;
+      overflow-wrap: break-word;
+    }
+  }
+
+  &__logo,
+  &__nav-link {
+    color: $black;
+    transition: $transition;
+
+    &:hover {
+      background-color: $gray-hover;
+    }
+  }
+}
