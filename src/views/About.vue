@@ -1,13 +1,20 @@
 <template>
   <div class="about">
-    <router-link to="/">Home</router-link>
-    <h1>This is an about page</h1>
+    <Header/>
+    <main class="page">
+      <h1>about page</h1>
+    </main>
   </div>
 </template>
 
 <script>
 
+import Header from "@/components/Header.vue";
+
 export default {
   name: 'AboutView',
+  components: {
+    Header
+  },
 }
 </script>

@@ -1,3 +1,8 @@
 @import "@/assets/fonts/raleway/index.css";
 @import "reset";
 @import "variables";
+@import "components";
+
+.page {
+  padding-top: 76px;
+}
