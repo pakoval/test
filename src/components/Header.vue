@@ -11,9 +11,7 @@
           <router-link :to="item.path" class="header__nav-link">
             <IconSvg
               v-if="item.icon"
-              :icon-name="item.icon.name"
-              :width="item.icon.width"
-              :height="item.icon.height"
+              :icon="item.icon"
             />
             <p>{{ item.title }}</p>
           </router-link>

@@ -1,11 +1,11 @@
 <template>
   <svg
-  class="icon"
-  :class="[`icon-${iconName}`, customClass]"
-  :width="width"
-  :height="height"
+    class="icon"
+    :class="[`icon-${icon.name}`]"
+    :width="icon.width"
+    :height="icon.height"
   >
-    <use :xlink:href="`/sprite.svg#${iconName}`"></use>
+    <use :xlink:href="`/sprite.svg#${icon.name}`"></use>
   </svg>
 </template>
 
@@ -13,22 +13,11 @@
 export default {
   name: "IconSvg",
   props: {
-    iconName: {
-      type: String,
-      default: "i",
+    icon: {
+      type: Object,
+      required: false,
+      default: () => {},
     },
-    customClass: {
-      type: String,
-      default: "",
-    },
-    width: {
-      type: [Number, String],
-      default: "16",
-    },
-    height: {
-      type: [Number, String],
-      default: "16",
-    }
-  }
+  },
 }
 </script>
