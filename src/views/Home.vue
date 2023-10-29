@@ -22,8 +22,8 @@
       </section>
 
       <section class="features">
-        <h3 class="features__title">about the company</h3>
-        <p class="features__subtitle">Key features of our company</p>
+        <h3 class="title">about the company</h3>
+        <p class="subtitle">Key features of our company</p>
 
         <div class="features__items">
           <div
@@ -53,8 +53,44 @@
             </router-link>
           </div>
           <div class="works__picture">
-            <img src="@/assets/img/work-img.jpeg" alt="works" class="works__img">
+            <img src="@/assets/img/work-img.jpeg" alt="works" class="works__img" />
           </div>
+      </section>
+
+      <section class="team">
+        <h3 class="title">the team</h3>
+        <p class="subtitle">The ones who runs this company</p>
+
+        <div class="team__gallery">
+          <Card
+            v-for="(worker) in workers"
+            :key="worker.name"
+            :worker="worker"
+          />
+        </div>
+      </section>
+
+      <Statistics/>
+
+      <section class="portfolio">
+        <h3 class="title">our work</h3>
+        <p class="subtitle">What we've done for people</p>
+
+        <div class="portfolio__gallery">
+          <router-link
+            v-for="(item, id) in portfolio"
+            :key="id"
+            to="#"
+            class="portfolio__gallery-link"
+          >
+            <img
+              :src="require(`@/assets/img/${item.img}`)"
+              :alt="item.img"
+              class="portfolio__gallery-img"
+            />
+          </router-link>
+
+        </div>
       </section>
     </main>
   </div>
@@ -63,12 +99,16 @@
 <script>
 import Header from "@/components/Header.vue";
 import IconSvg from "@/components/IconSvg.vue";
+import Card from "@/components/Card.vue";
+import Statistics from "@/components/Statistics.vue";
 
 export default {
   name: "HomeView",
   components: {
     Header,
     IconSvg,
+    Card,
+    Statistics,
   },
   data() {
     return {
@@ -134,9 +174,69 @@ export default {
         name: "menu",
         width: "16",
         height: "16",
-      }
-    }
-  }
+      },
+      workers: [
+        {
+          img: "worker1.jpeg",
+          name: "John Doe",
+          position: "CEO",
+          summary: "Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum"
+        },
+        {
+          img: "worker2.jpeg",
+          name: "Anja Doe",
+          position: "Art Director",
+          summary: "Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum"
+        },
+        {
+          img: "worker3.jpeg",
+          name: "Mike Ross",
+          position: "Web Designer",
+          summary: "Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum"
+        },
+        {
+          img: "worker4.jpeg",
+          name: "Dan Star",
+          position: "Designer",
+          summary: "Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum"
+        },
+      ],
+      portfolio: [
+        {
+          img: "drone.jpeg",
+          link: "#"
+        },
+        {
+          img: "cam.jpeg",
+          link: "#"
+        },
+        {
+          img: "desk.jpeg",
+          link: "#"
+        },
+        {
+          img: "ios.jpeg",
+          link: "#"
+        },
+        {
+          img: "micro.jpeg",
+          link: "#"
+        },
+        {
+          img: "typewriter.jpeg",
+          link: "#"
+        },
+        {
+          img: "soundbox.jpeg",
+          link: "#"
+        },
+        {
+          img: "tableturner.jpeg",
+          link: "#"
+        },
+      ]
+    };
+  },
 }
 </script>
 

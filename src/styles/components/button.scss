@@ -1,0 +1,19 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: $transition;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--card {
+    padding: 8px $padding-sm;
+
+    &:hover {
+      background-color: $gray-hover;
+    }
+  }
+}
