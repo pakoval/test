@@ -7,6 +7,7 @@
   min-height: 56px;
   background-color: $white;
   box-shadow: $header-shadow;
+  z-index: 1000;
 
   &__logo {
     display: inline-block;
