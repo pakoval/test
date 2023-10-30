@@ -1,8 +1,8 @@
 <template>
   <section class="statistics">
     <div
-      v-for="item in statistics"
-      :key="item.num"
+      v-for="(item, i) in statistics"
+      :key="i"
       class="statistics__item"
     >
       <p class="statistics__item-num">{{ item.num }}+</p>

@@ -1,9 +1,6 @@
 <template>
   <div class="pricing-card">
-    <p
-      class="pricing-card__title"
-      :class="tariff.isHot ? 'pricing-card__title--hot': null"
-    >
+    <p class="pricing-card__title" :class="setHotClass">
       {{ tariff.title }}
     </p>
     <ul class="pricing-card__list">
@@ -39,5 +36,10 @@ export default {
       default: () => {},
     },
   },
+  computed: {
+    setHotClass() {
+      return this.tariff.isHot ? 'pricing-card__title--hot': null;
+    }
+  }
 }
 </script>

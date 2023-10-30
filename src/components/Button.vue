@@ -2,7 +2,7 @@
   <button
     :type="type"
     class="btn"
-    :class="name ? [`btn--${name}`] : null"
+    :class="setBtnClass"
     @click="handleClick"
   >
     <slot/>
@@ -24,6 +24,11 @@ export default {
   methods: {
     handleClick() {
       this.$emit("click")
+    }
+  },
+  computed: {
+    setBtnClass() {
+      return this.name ? [`btn--${this.name}`] : null
     }
   }
 }
