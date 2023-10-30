@@ -1,5 +1,6 @@
 <template>
   <svg
+    v-if="icon"
     class="icon"
     :class="[`icon-${icon.name}`]"
     :width="icon.width"

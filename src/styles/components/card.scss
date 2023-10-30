@@ -1,0 +1,30 @@
+.card {
+  box-shadow: $card-shadow;
+
+  &__picture {
+    img {
+      filter: grayscale(70%);
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    padding: $margin-sm $padding-sm;
+    gap: $padding-sm;
+
+    &-name {
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    &-post {
+      font-size: 15px;
+      font-weight: 300;
+      opacity: .6;
+    }
+  }
+}

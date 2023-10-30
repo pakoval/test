@@ -2,7 +2,12 @@
 @import "reset";
 @import "variables";
 @import "components";
+@import "views/home";
 
 .page {
-  padding-top: 76px;
+  padding: 76px 16px 0;
+}
+
+.container {
+  padding: $padding-sm;
 }

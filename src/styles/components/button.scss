@@ -1,0 +1,41 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: $transition;
+  font-size: 15px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $gray-hover;
+  }
+
+  &--card,
+  &--footer {
+    padding: 8px $padding-sm;
+
+    &:hover {
+      background-color: $gray-hover;
+    }
+  }
+
+  &--pricing,
+  &--form {
+    background-color: $black;
+    color: $white;
+    padding: 12px 24px;
+  }
+
+  &--form {
+    width: max-content;
+
+    &:hover {
+      color: $black;
+
+      .icon {
+        stroke: $black;
+      }
+    }
+  }
+}

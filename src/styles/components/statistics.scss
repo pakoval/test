@@ -1,0 +1,29 @@
+.statistics {
+  display: flex;
+  justify-content: space-around;
+  background-color: $dark-gray;
+  padding: $padding-lg $padding-sm;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 240px;
+    max-width: 100%;
+
+    &-num,
+    &-title {
+      color: $white;
+    }
+
+    &-num {
+      font-size: 36px;
+    }
+
+    &-title {
+      font-size: 15px;
+      text-transform: capitalize;
+    }
+  }
+}
