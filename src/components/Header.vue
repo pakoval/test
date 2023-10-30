@@ -5,16 +5,15 @@
       <ul class="header__nav-list">
         <li
           v-for="item in navList"
-          :key="item.title"
+          :key="item.id"
           class="header__nav-item"
+          @click="scrollToSection(item.id)"
         >
-          <router-link :to="item.path" class="header__nav-link">
-            <IconSvg
-              v-if="item.icon"
-              :icon="item.icon"
-            />
-            <p>{{ item.title }}</p>
-          </router-link>
+          <IconSvg
+            v-if="item.icon"
+            :icon="item.icon"
+          />
+          <p>{{ item.title }}</p>
         </li>
       </ul>
     </nav>
@@ -32,11 +31,11 @@ export default {
     return {
       navList: [
         {
-          path: "/about",
+          id: "about",
           title: "about"
         },
         {
-          path: "/",
+          id: "team",
           icon: {
             name: "user",
             width: "11",
@@ -45,7 +44,7 @@ export default {
           title: "team"
         },
         {
-          path: "/work",
+          id: "portfolio",
           icon: {
             name: "menu",
             width: "15",
@@ -54,7 +53,7 @@ export default {
           title: "work"
         },
         {
-          path: "/pricing",
+          id: "pricing",
           icon: {
             name: "dollar",
             width: "15",
@@ -63,7 +62,7 @@ export default {
           title: "pricing"
         },
         {
-          path: "/contact",
+          id: "contact",
           icon: {
             name: "mail",
             width: "15",
@@ -72,6 +71,12 @@ export default {
           title: "contact"
         },
       ]
+    };
+  },
+  methods: {
+    scrollToSection(id) {
+      const section = document.getElementById(id);
+      section.scrollIntoView({ behavior: 'smooth' });
     }
   }
 }

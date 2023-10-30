@@ -29,5 +29,13 @@
 
   &--form {
     width: max-content;
+
+    &:hover {
+      color: $black;
+
+      .icon {
+        stroke: $black;
+      }
+    }
   }
 }

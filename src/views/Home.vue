@@ -21,7 +21,7 @@
         </div>
       </section>
 
-      <section class="features">
+      <section class="features"  id="about">
         <h3 class="title">about the company</h3>
         <p class="subtitle">Key features of our company</p>
 
@@ -57,7 +57,7 @@
           </div>
       </section>
 
-      <section class="team">
+      <section class="team" id="team">
         <h3 class="title">the team</h3>
         <p class="subtitle">The ones who runs this company</p>
 
@@ -72,7 +72,7 @@
 
       <Statistics/>
 
-      <section class="portfolio">
+      <section class="portfolio" id="portfolio">
         <h3 class="title">our work</h3>
         <p class="subtitle">What we've done for people</p>
 
@@ -111,7 +111,7 @@
         </div>
       </section>
 
-      <section class="pricing">
+      <section class="pricing" id="pricing">
         <h3 class="title">pricing</h3>
         <p class="subtitle">Choose a pricing plan that fits your needs</p>
 
@@ -124,7 +124,7 @@
         </div>
       </section>
 
-      <section class="contact">
+      <section class="contact" id="contact">
         <h3 class="title">contact</h3>
         <p class="subtitle">Lets get in touch. Send us a message</p>
 

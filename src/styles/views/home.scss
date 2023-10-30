@@ -95,7 +95,6 @@
 }
 
 .features {
-
   &__items,
   &__item {
     display: flex;
@@ -140,7 +139,6 @@
   }
 
   &__info {
-
     &-title {
       font-size: 24px;
       font-weight: 500;
@@ -165,20 +163,18 @@
       padding: 8px $padding-sm;
       margin-top: 15px;
       color: $white;
-
-      &, .icon {
-        transition: $transition;
-      }
+      transition: $transition;
 
       .icon {
         fill: $white;
+        transition: $transition;
       }
 
       &:hover {
         color: $black;
         background-color: $gray-hover;
 
-        > svg {
+        > .icon {
           fill: $black;
         }
       }
@@ -319,7 +315,9 @@
     }
 
     .icon {
+      transition: $transition;
       stroke: $white;
+      fill: none;
     }
   }
 
