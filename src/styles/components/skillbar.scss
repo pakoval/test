@@ -1,0 +1,47 @@
+.skillbar,
+.skillbar__top,
+.skillbar__progress--filled {
+  display: flex;
+}
+
+.skillbar {
+  flex-direction: column;
+  gap: 10px;
+
+  &__top {
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    font-size: 15px;
+    letter-spacing: 4px;
+    text-transform: capitalize;
+    word-break: break-all;
+  }
+
+  &__progress {
+    position: relative;
+    background-color: $skill-bg;
+    height: 28px;
+
+    &--filled {
+      content: "";
+      position: absolute;
+      align-items: center;
+      justify-content: center;
+      background: $dark-gray;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 90%;
+
+    }
+
+    &-percent {
+      font-size: 15px;
+      color: $white;
+    }
+  }
+}

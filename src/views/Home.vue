@@ -10,14 +10,14 @@
         <router-link to="/" class="hero__link">Learn more and start today</router-link>
 
         <div class="hero__social">
-          <router-link
+          <a
             v-for="icon in socialIcons"
             :key="icon.name"
-            :to="icon.link"
+            :href="icon.link"
             class="hero__social-link"
           >
             <IconSvg :icon="icon"/>
-          </router-link>
+          </a>
         </div>
       </section>
 
@@ -63,7 +63,7 @@
 
         <div class="team__gallery">
           <Card
-            v-for="(worker) in workers"
+            v-for="worker in workers"
             :key="worker.name"
             :worker="worker"
           />
@@ -92,7 +92,111 @@
 
         </div>
       </section>
+
+      <section class="skills">
+        <div class="skills__info">
+          <h3 class="skills__info-title">Our Skills</h3>
+          <p class="skills__info-desc">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore
+          </p>
+        </div>
+
+        <div class="skills__items">
+          <SkillBar
+            v-for="skill in skills"
+            :key="skill.title"
+            :skill="skill"
+          />
+        </div>
+      </section>
+
+      <section class="pricing">
+        <h3 class="title">pricing</h3>
+        <p class="subtitle">Choose a pricing plan that fits your needs</p>
+
+        <div class="pricing__cards">
+          <PricingCard
+            v-for="tariff in pricingCards"
+            :key="tariff.title"
+            :tariff="tariff"
+          />
+        </div>
+      </section>
+
+      <section class="contact">
+        <h3 class="title">contact</h3>
+        <p class="subtitle">Lets get in touch. Send us a message</p>
+
+        <ul class="contact__info">
+          <li class="contact__info-item">
+            <img src="@/assets/img/geo.png" alt="geo" class="contact__info-img">
+            <a
+              href="https://maps.app.goo.gl/syeLomec2tPBstiSA"
+              target="_blank"
+              class="contact__info-link"
+            >
+              Chicago, US
+            </a>
+          </li>
+          <li class="contact__info-item">
+            <img src="@/assets/img/phone.png" alt="phone" class="contact__info-img">
+            <a href="tel:00151515" class="contact__info-link">
+              Phone: +00 151515
+            </a>
+          </li>
+          <li class="contact__info-item">
+            <img src="@/assets/img/mail.png" alt="mail" class="contact__info-img">
+            <a href="mailto:mail@mail.com" class="contact__info-link">
+              Email: mail@mail.com
+            </a>
+          </li>
+        </ul>
+
+        <form
+          class="contact-form"
+          method="post"
+          @submit.prevent="submitForm"
+        >
+          <input
+            v-model="formData.name"
+            type="text"
+            placeholder="Name"
+            required
+            name="name"
+            class="contact-form__input"
+          >
+          <input
+            v-model="formData.email"
+            type="email"
+            placeholder="Email"
+            required
+            name="email"
+            class="contact-form__input"
+          >
+          <input
+            v-model="formData.subject"
+            type="text"
+            placeholder="Subject"
+            required
+            name="subject"
+            class="contact-form__input"
+          >
+          <textarea
+            v-model="formData.message"
+            placeholder="Message"
+            class="contact-form__textarea"
+          ></textarea>
+          <Button type="submit" name="form">
+            <IconSvg :icon="iconForm" />
+            Send Message
+          </Button>
+        </form>
+
+        <img src="@/assets/img/map.jpg" alt="map" class="contact__map-img">
+      </section>
     </main>
+    <Footer/>
   </div>
 </template>
 
@@ -101,14 +205,22 @@ import Header from "@/components/Header.vue";
 import IconSvg from "@/components/IconSvg.vue";
 import Card from "@/components/Card.vue";
 import Statistics from "@/components/Statistics.vue";
+import SkillBar from "@/components/SkillBar.vue";
+import PricingCard from "@/components/PricingCard.vue";
+import Button from "@/components/Button.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   name: "HomeView",
   components: {
+    Footer,
+    Button,
+    PricingCard,
     Header,
     IconSvg,
     Card,
     Statistics,
+    SkillBar,
   },
   data() {
     return {
@@ -234,9 +346,77 @@ export default {
           img: "tableturner.jpeg",
           link: "#"
         },
-      ]
+      ],
+      skills: [
+        {
+          title: "Photography",
+          percent: 90,
+          icon: {
+            name: "camera",
+            width: "18",
+            height: "18",
+          },
+        },
+        {
+          title: "Web design",
+          percent: 85,
+          icon: {
+            name: "design",
+            width: "18",
+            height: "18",
+          },
+        },
+        {
+          title: "Development",
+          percent: 75,
+          icon: {
+            name: "development",
+            width: "18",
+            height: "18",
+          },
+        },
+      ],
+      pricingCards: [
+        {
+          title: "Basic",
+          advantages: ["10GB Storage", "10 Emails", "10 Domains", "Endless Support"],
+          price: 10,
+          isHot: false,
+          type: "per month",
+        },
+        {
+          title: "Pro",
+          advantages: ["25GB Storage", "25 Emails", "25 Domains", "Endless Support"],
+          price: 20,
+          isHot: true,
+          type: "per month",
+        },
+        {
+          title: "Premium",
+          advantages: ["50GB Storage", "50 Emails", "65 Domains", "Endless Support"],
+          price: 50,
+          isHot: false,
+          type: "per month",
+        },
+      ],
+      iconForm: {
+        name: "send",
+        width: "15",
+        height: "15",
+      },
+      formData: {
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      },
     };
   },
+  methods: {
+    submitForm() {
+      console.log(this.formData)
+    },
+  }
 }
 </script>
 

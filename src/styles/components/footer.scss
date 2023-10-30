@@ -1,0 +1,26 @@
+.footer,
+.footer__social {
+  display: flex;
+  gap: 10px;
+}
+
+.footer {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: $black;
+  padding: $padding-lg 0;
+
+  &__social {
+    margin: $margin-md 0;
+
+    .icon {
+      fill: $white;
+    }
+  }
+
+  .copyright {
+    color: $white;
+    font-size: 15px;
+  }
+}
