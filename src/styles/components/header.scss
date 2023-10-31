@@ -17,15 +17,17 @@
   }
 
   &__nav {
-    &-list {
+    &-list,
+    &-item {
       display: flex;
       align-items: center;
+    }
+
+    &-list {
       flex-wrap: wrap;
     }
 
     &-item {
-      display: flex;
-      align-items: center;
       gap: 5px;
       padding: $padding-sm;
       font-size: 16px;

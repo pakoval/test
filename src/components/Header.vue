@@ -29,6 +29,7 @@
 
 <script>
 import IconSvg from "@/components/IconSvg.vue";
+
 export default {
   name: 'HeaderBlock',
   components: {
