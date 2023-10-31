@@ -1,13 +1,20 @@
 <template>
   <header class="header">
     <router-link to="/" class="header__logo">logo</router-link>
+
+    <input type="checkbox" id="check">
+    <label for="check" class="header__mobile">
+      <IconSvg :icon="iconMobile" id="mobile-menu"/>
+      <IconSvg :icon="iconMobileClose" id="mobile-close"/>
+    </label>
+
     <nav class="header__nav">
       <ul class="header__nav-list">
         <li
           v-for="item in navList"
           :key="item.id"
           class="header__nav-item"
-          @click="scrollToSection(item.id)"
+          @click="scrollToSection(item.id); uncheckMenu()"
         >
           <IconSvg
             v-if="item.icon"
@@ -70,13 +77,29 @@ export default {
           },
           title: "contact"
         },
-      ]
+      ],
+      iconMobile: {
+        name: "menu-mobile",
+        width: "32",
+        height: "32",
+      },
+      iconMobileClose: {
+        name: "close",
+        width: "32",
+        height: "32",
+      }
     };
   },
   methods: {
     scrollToSection(id) {
       const section = document.getElementById(id);
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({ behavior: "smooth" });
+    },
+    uncheckMenu() {
+      const check = document.getElementById("check");
+      if(check.checked) {
+        check.checked = false
+      }
     }
   }
 }

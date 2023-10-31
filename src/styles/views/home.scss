@@ -327,3 +327,99 @@
     filter: grayscale(75%);
   }
 }
+
+@media screen and (max-width: $media-laptops) {
+  .features__items,
+  .team__gallery {
+      flex-wrap: wrap;
+  }
+
+  .features__item {
+    width: calc(50% - 16px);
+  }
+
+  .portfolio__gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+  }
+}
+
+@media screen and (max-width: $media-tablets) {
+  .pricing {
+    &__cards {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media screen and (max-width: $media-mobile) {
+  .portfolio,
+  .features,
+  .pricing,
+  .contact,
+  .works,
+  .team {
+    padding: 90px 16px;
+  }
+
+  .hero {
+    padding: $padding-md;
+
+    &__title {
+      font-size: 36px;
+      margin-bottom: 36px;
+    }
+
+    &__subtitle,
+    &__link {
+      font-size: 15px;
+    }
+
+    &__link {
+      padding: 8px 16px;
+    }
+
+    &__social {
+      padding: 24px 32px;
+    }
+  }
+
+  .works {
+    flex-wrap: wrap-reverse;
+
+    &__info,
+    &__picture {
+      max-width: 100%;
+    }
+  }
+
+  .team__gallery {
+    gap: 5px;
+  }
+
+  .statistics {
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+    gap: 10px;
+
+
+    &__item {
+      width: calc(50% - 16px);
+    }
+  }
+
+  .portfolio__gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills {
+    flex-wrap: wrap;
+    gap: $padding-md;
+
+    &__info,
+    &__items {
+      width: 100%;
+    }
+  }
+}
+
