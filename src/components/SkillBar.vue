@@ -6,10 +6,7 @@
     </div>
 
     <div class="skillbar__progress">
-      <div
-        class="skillbar__progress--filled"
-        :style="{ width: skill.percent + '%' }"
-      >
+      <div :style="setProgressBar" class="skillbar__progress--filled">
         <p class="skillbar__progress-percent">{{ skill.percent }}%</p>
       </div>
     </div>
@@ -30,5 +27,10 @@ export default {
       default: () => {},
     },
   },
+  computed: {
+    setProgressBar() {
+      return { width: this.skill.percent + "%" }
+    }
+  }
 }
 </script>

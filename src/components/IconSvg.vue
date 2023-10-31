@@ -2,7 +2,7 @@
   <svg
     v-if="icon"
     class="icon"
-    :class="[`icon-${icon.name}`]"
+    :class="setIconClass"
     :width="icon.width"
     :height="icon.height"
   >
@@ -20,5 +20,10 @@ export default {
       default: () => {},
     },
   },
+  computed: {
+    setIconClass() {
+      return [`icon-${this.icon.name}`]
+    }
+  }
 }
 </script>

@@ -28,3 +28,19 @@
     }
   }
 }
+
+@media screen and (max-width: $media-laptops) {
+  .card {
+    width: calc(50% - 8px);
+
+    &__picture img {
+      max-height: 200px;
+    }
+  }
+}
+
+@media screen and (max-width: $media-mobile) {
+  .card {
+    width: 100%;
+  }
+}
